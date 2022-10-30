@@ -508,7 +508,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
             self.assertEqual(correct, output.getvalue().strip())
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(testCmd="Amenity.update({}, attr_name)".format(testId)
-HBNBCommand().onecmd("destroy Amenity"))
+                             HBNBCommand().onecmd("destroy Amenity"))
             self.assertEqual(correct, output.getvalue().strip())
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("destroy Place"))
@@ -1079,7 +1079,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             self.assertEqual(correct, output.getvalue().strip())
 
     def test_update_missing_attr_value_space_notation(self):
-            self.assertFalse(HBNBCommand().onecmd(testCmd))
+        self.assertFalse(HBNBCommand().onecmd(testCmd))
         correct = "** value missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             HBNBCommand().onecmd("create BaseModel")
